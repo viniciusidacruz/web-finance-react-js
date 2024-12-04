@@ -5,10 +5,10 @@
   "type": "module",
   "engines": {
     "node": ">=18.0.0",
-    "npm": "please-use-yarn",
-    "yarn": ">=1.22.22",
-    "pnpm": "please-use-yarn",
-    "bun": "please-use-yarn"
+    "npm": ">=10.8.2",
+    "yarn": "please-use-npm",
+    "pnpm": "please-use-npm",
+    "bun": "please-use-npm"
   },
   "scripts": {
     "dev": "vite",
@@ -18,12 +18,15 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.462.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "vite-tsconfig-paths": "^5.1.3"

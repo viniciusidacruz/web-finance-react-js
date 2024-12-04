@@ -1,3 +1,3 @@
-import { Button } from "./presentation/global/components/external/button";
+import { AppRoutes } from "./config/routes";
 
-export const App = () => <Button>Hello</Button>;
+export const App = () => <AppRoutes />;
