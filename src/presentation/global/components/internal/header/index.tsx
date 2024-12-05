@@ -21,7 +21,7 @@ const Root = ({ children, className = "" }: HeaderProps) => {
       className={cn(
         className,
         "w-full py-2 md:py-5 bg-white border-b border-gray-100",
-        hasScroll && "sticky top-0"
+        hasScroll && "sticky top-0 shadow"
       )}
     >
       {children}

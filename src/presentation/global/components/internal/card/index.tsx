@@ -1,25 +1,43 @@
 import { cn } from "@lib/tw-merge";
-import { CardProps } from "./types";
+import {
+  CardBaseProps,
+  CardBigText,
+  CardIconProps,
+  CardProps,
+  CardTextProps,
+  CardTitleProps,
+} from "./types";
+import { Skeleton } from "../../external";
 
-const Root = ({ children, className = "", onClick }: CardProps) => (
-  <div
-    onClick={onClick}
-    className={cn(
-      className,
-      "rounded-xl bg-white border border-gray-100 p-6 shadow w-full"
-    )}
-  >
-    {children}
-  </div>
-);
+const Root = ({
+  children,
+  className = "",
+  onClick,
+  isLoading = false,
+}: CardProps) => {
+  if (isLoading)
+    return <Skeleton className="bg-gray-300 shadow w-full min-h-32" />;
 
-const Text = ({ children, className = "" }: CardProps) => (
+  return (
+    <div
+      onClick={onClick}
+      className={cn(
+        className,
+        "rounded-xl bg-white border border-gray-100 p-6 shadow w-full"
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+const Text = ({ children, className = "" }: CardTextProps) => (
   <h3 className={cn(className, "text-sm font-medium text-gray-600 leading-5")}>
     {children}
   </h3>
 );
 
-const Title = ({ children, className = "" }: CardProps) => (
+const Title = ({ children, className = "" }: CardTitleProps) => (
   <h3
     className={cn(className, "text-base font-semibold text-gray-900 leading-6")}
   >
@@ -27,7 +45,7 @@ const Title = ({ children, className = "" }: CardProps) => (
   </h3>
 );
 
-const BigText = ({ children, className = "" }: CardProps) => (
+const BigText = ({ children, className = "" }: CardBigText) => (
   <p
     className={cn(
       className,
@@ -38,7 +56,7 @@ const BigText = ({ children, className = "" }: CardProps) => (
   </p>
 );
 
-const Icon = ({ children, className = "" }: CardProps) => (
+const Icon = ({ children, className = "" }: CardIconProps) => (
   <div
     className={cn(
       className,
@@ -49,12 +67,24 @@ const Icon = ({ children, className = "" }: CardProps) => (
   </div>
 );
 
-export default { Root, Text, BigText, Title, Icon };
+const Badge = ({ children, className = "" }: CardBaseProps) => (
+  <div
+    className={cn(
+      className,
+      "px-2 border font-medium text-sm leading-5 text-gray-950 border-gray-200 bg-white rounded-md flex items-center gap-1"
+    )}
+  >
+    {children}
+  </div>
+);
+
+export default { Root, Text, BigText, Title, Icon, Badge };
 
 export const Card = {
   Root: Root,
   Text: Text,
   Icon: Icon,
+  Badge: Badge,
   Title: Title,
   BigText: BigText,
 };

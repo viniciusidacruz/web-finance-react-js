@@ -52,7 +52,7 @@ export const LayoutDashboard = () => (
       </Header.Container>
     </Header.Root>
 
-    <main className="container mx-auto px-2 sm:px-0 mt-12">
+    <main className="container mx-auto px-2 sm:px-0 mt-12  mb-40">
       <Outlet />
     </main>
   </Fragment>
