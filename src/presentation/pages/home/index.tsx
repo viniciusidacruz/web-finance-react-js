@@ -1,3 +1,13 @@
+import { Fragment } from "react";
+
+import { Head } from "./components/head";
+import { Summary } from "./components/summary";
+
 export const Home = () => {
-  return <main className="container mx-auto px-2 sm:px-0">Dashboard</main>;
+  return (
+    <Fragment>
+      <Head />
+      <Summary />
+    </Fragment>
+  );
 };

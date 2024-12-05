@@ -19,6 +19,7 @@
       "@/*": ["./src/*"],
       "@presentation/*": ["./src/presentation/*"],
       "@lib/*": ["./src/config/lib/*"],
+      "@utils/*": ["./src/helpers/utils/*"],
       "@components/*": ["./src/presentation/global/components/*"]
     },
     /* Linting */

@@ -8,3 +8,7 @@ export interface NavigationProps {
 export type NavigationItemProps = NavigationProps & {
   path: string;
 };
+
+export type NavigationTabProps = NavigationProps & {
+  param: string;
+};

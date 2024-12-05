@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom/vitest";
 import { describe, it, expect } from "vitest";
 import { BrowserRouter } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 
 import { Navigation } from "@components/internal";
 
@@ -25,5 +25,23 @@ describe("Navigation", () => {
 
     expect(link).toHaveAttribute("href", "/");
     expect(link).toHaveClass("text-primary");
+  });
+
+  it("render the NavigationTab with the param correctly", () => {
+    render(
+      <BrowserRouter>
+        <Navigation.Tab param="Nesse mês">Nesse mês</Navigation.Tab>
+      </BrowserRouter>
+    );
+
+    const tab = screen.getByRole("button");
+
+    expect(tab).toBeInTheDocument();
+
+    fireEvent.click(tab);
+
+    expect(tab).toHaveClass(
+      "text-primary bg-green-50 font-semibold text-base leading-6 py-2 px-3 hover:text-primary"
+    );
   });
 });

@@ -13,7 +13,7 @@ describe("Logo", () => {
       </BrowserRouter>
     );
 
-    const logoText = screen.getByText("WFReact");
+    const logoText = screen.getByText("Pandu Moldes");
 
     expect(logoText).toBeInTheDocument();
   });
