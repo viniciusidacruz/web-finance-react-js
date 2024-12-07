@@ -20,6 +20,7 @@ const Root = ({
 
   return (
     <div
+      data-testid="@card_root"
       onClick={onClick}
       className={cn(
         className,
